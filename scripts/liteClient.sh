@@ -5,4 +5,4 @@ cd ~/main.ton.dev/ton/build/lite-client && \
 -p ~/ton-keys/liteserver.pub \
 -a 127.0.0.1:3031 \
 -rc \
-"${1} ${2} ${3}"
+"${1} ${2} ${3} ${4}"
