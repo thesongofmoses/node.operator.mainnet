@@ -35,6 +35,9 @@ export TON_WORK_DB_KEYRING_DIR="${TON_WORK_DB_DIR}/keyring"
 ##tonos-cli
 export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
 
+##tvm
+export TVM_DIR="$HOME/TVM-linker/tvm_linker/target/release"
+
 ##node.operator
 export NODE_OPERATOR_DIR="$HOME/node.operator"
 export NODE_OPERATOR_SCRIPTS_DIR="${NODE_OPERATOR_DIR}/scripts"
