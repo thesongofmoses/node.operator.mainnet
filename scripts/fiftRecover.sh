@@ -6,7 +6,7 @@ cd ${NODE_OPERATOR_SCRIPTS_DIR}
 
 #prepare wallet address
 my_parsed_raw_address=$(echo $MY_RAW_ADDRESS | sed 's/^.\{3\}//')
-touch $my_parsed_raw_address > ${TVM_DIR}
+touch $my_parsed_raw_address > ${TVM_DIR}/$my_parsed_raw_address
 
 #prepare key pair
 cat ${KEYS_DIR}/msig.keys.json | awk '{print $4}' | tr -d '"' | tr -d '}' > ${TVM_DIR}/msig.keys.txt
