@@ -11,8 +11,8 @@ export HOSTNAME
 USERNAME=$(whoami)
 export USERNAME
 
-##constant variables
-export MY_RAW_ADDRESS=$(cat ${KEYS_DIR}/$HOSTNAME.addr)
+#CONSTANT VARIABLES
+export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
 
 #DIRs
 ##x.ton.dev
@@ -32,13 +32,18 @@ export TON_WORK_DIR="/var/ton-work"
 export TON_WORK_DB_DIR="${TON_WORK_DIR}/db"
 export TON_WORK_DB_KEYRING_DIR="${TON_WORK_DB_DIR}/keyring"
 
-##tonos-cli
+##smart-contracts
+export SOLIDITY_DIR="${DEV_DIR}/ton-labs-contracts/solidity"
+export SETCODEMULTISIG_DIR="${SOLIDITY_DIR}/setcodemultisig"
+export SAFEMULTISIG_DIR="${SOLIDITY_DIR}/safemultisig"
+
+#TONOS-CLI
 export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
 
-##tvm
+#TVM
 export TVM_DIR="$HOME/TVM-linker/tvm_linker/target/release"
 
-##node.operator
+#NODE.OPERATOR
 export NODE_OPERATOR_DIR="$HOME/node.operator"
 export NODE_OPERATOR_SCRIPTS_DIR="${NODE_OPERATOR_DIR}/scripts"
 export NODE_OPERATOR_CONFIGS_DIR="${NODE_OPERATOR_DIR}/configs"
