@@ -13,6 +13,8 @@ export USERNAME
 
 #CONSTANT VARIABLES
 export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
+export SAFEMULTISIGWALLET_ABI_JSON="${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json"
+export SAFEMULTISIGWALLET_TVC="${SAFEMULTISIG_DIR}/SafeMultisigWallet.tvc"
 
 #DIRs
 ##x.ton.dev
