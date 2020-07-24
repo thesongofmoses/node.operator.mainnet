@@ -32,22 +32,23 @@ export KEYS_DIR="$HOME/ton-keys"
 export ELECTIONS_DIR="${KEYS_DIR}/elections"
 
 ##smart-contracts
-export SOLIDITY_DIR="$HOME/${DEV_DIR}/ton-labs-contracts/solidity"
+export SOLIDITY_DIR="${DEV_DIR}/ton-labs-contracts/solidity"
 export SETCODEMULTISIG_DIR="${SOLIDITY_DIR}/setcodemultisig"
 export SAFEMULTISIG_DIR="${SOLIDITY_DIR}/safemultisig"
+
+##TONOS-CLI
+export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
 
 ##ton-work
 export TON_WORK_DIR="/var/ton-work"
 export TON_WORK_DB_DIR="${TON_WORK_DIR}/db"
 export TON_WORK_DB_KEYRING_DIR="${TON_WORK_DB_DIR}/keyring"
 
-#TONOS-CLI
-export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
-
-#TVM
+##TVM
 export TVM_DIR="$HOME/TVM-linker/tvm_linker/target/release"
 
-#NODE.OPERATOR
+##NODE.OPERATOR
 export NODE_OPERATOR_DIR="$HOME/node.operator"
 export NODE_OPERATOR_SCRIPTS_DIR="${NODE_OPERATOR_DIR}/scripts"
 export NODE_OPERATOR_CONFIGS_DIR="${NODE_OPERATOR_DIR}/configs"
+
