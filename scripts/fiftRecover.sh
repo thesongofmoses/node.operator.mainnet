@@ -9,8 +9,8 @@ my_parsed_raw_address=$(echo $MY_RAW_ADDRESS | sed 's/^.\{3\}//')
 touch $my_parsed_raw_address > ${TVM_DIR}
 
 #prepare key pair
-cat ~/ton-keys/msig.keys.json | awk '{print $4}' | tr -d '"' | tr -d '}' > ${TVM_DIR}/msig.keys.txt
-cat ~/ton-keys/msig.keys.json | awk '{print $2}' | tr -d '"' | tr -d ',' >> ${TVM_DIR}/msig.keys.txt
+cat ${KEYS_DIR}/msig.keys.json | awk '{print $4}' | tr -d '"' | tr -d '}' > ${TVM_DIR}/msig.keys.txt
+cat ${KEYS_DIR}/msig.keys.json | awk '{print $2}' | tr -d '"' | tr -d ',' >> ${TVM_DIR}/msig.keys.txt
 xxd -r -p ${TVM_DIR}/msig.keys.txt ${TVM_DIR}/msig.keys.bin
 
 #prepare message
