@@ -20,7 +20,7 @@ cd ${TVM_DIR}
 ./tvm_linker message "${my_parsed_raw_address}" \
         -a "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         -m submitTransaction \
-        -p "{"\"dest"\": "\"$ELECTOR_ADDRESS"\","\"value"\":1000000000,"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\"$encoded_boc"\"}" \
+        -p "{"\"dest"\":"\"$ELECTOR_ADDRESS"\","\"value"\":1000000000,"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\"$encoded_boc"\"}" \
         -w -1 \
         --setkey msig.keys.bin
 
