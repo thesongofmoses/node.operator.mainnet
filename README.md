@@ -7,5 +7,5 @@
     mv node.operator.mainnet node.operator
     cd node.operator/scripts && . ~/node.operator/configs/env.sh
     cd ~/node.operator/configs
-    echo bashrc > ~/.bashrc && source ~/.bashrc
+    cat bashrc > ~/.bashrc && source ~/.bashrc
     crontab ~/node.operator/configs/crontab
