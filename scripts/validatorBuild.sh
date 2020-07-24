@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo apt install git
-git clone https://github.com/tonlabs/main.ton.dev.git
-cd ~/main.ton.dev/scripts/
+sudo apt install -y git
+git clone https://github.com/tonlabs/${NETWORK}.ton.dev.git
+cd ${SCRIPTS_DIR}
 . ./env.sh
 ./build.sh
 ./setup.sh
