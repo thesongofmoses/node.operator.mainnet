@@ -15,6 +15,8 @@ export USERNAME
 export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
 export SAFEMULTISIGWALLET_ABI_JSON="${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json"
 export SAFEMULTISIGWALLET_TVC="${SAFEMULTISIG_DIR}/SafeMultisigWallet.tvc"
+export ELECTOR_ADDRESS=$(cat ${ELECTIONS_DIR}/elector-addr-base64)
+
 
 #DIRs
 ##x.ton.dev
