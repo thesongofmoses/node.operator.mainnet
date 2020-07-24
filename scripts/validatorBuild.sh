@@ -7,3 +7,8 @@ cd ~/main.ton.dev/scripts/
 ./build.sh
 ./setup.sh
 ./run.sh
+
+cd
+git clone https://github.com/tonlabs/TVM-linker.git
+cd TVM-linker/tvm_linker
+cargo build --release
