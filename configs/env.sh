@@ -11,6 +11,9 @@ export HOSTNAME
 USERNAME=$(whoami)
 export USERNAME
 
+##constant variables
+export MY_RAW_ADDRESS=$(cat ${KEYS_DIR}/$HOSTNAME.addr)
+
 #DIRs
 ##x.ton.dev
 export DEV_DIR="${NETWORK}.ton.dev"
