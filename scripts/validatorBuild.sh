@@ -9,5 +9,5 @@ cd ${SCRIPTS_DIR}
 ./run.sh
 
 cd && git clone https://github.com/tonlabs/TVM-linker.git
-cd ${TVM_DIR}
+cd TVM-linker/tvm_linker
 cargo build --release
