@@ -14,13 +14,13 @@ cat ~/ton-keys/msig* | awk 'FNR == 2 {print $2}' | tr -d '"\,\n' >> ${TVM_DIR}/m
 xxd -r -p ${TVM_DIR}/msig.keys.txt ${TVM_DIR}/msig.keys.bin
 
 #prepare message
-encoded_boc=$(base64 --wrap=0 ${BUILD_DIR}/recover-query.boc)
+encoded_recover-query.boc=$(base64 --wrap=0 ${BUILD_DIR}/recover-query.boc)
 
 cd ${TVM_DIR}
 ./tvm_linker message "${my_parsed_raw_address}" \
         -a "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         -m submitTransaction \
-        -p "{"\"dest"\":"\"$ELECTOR_ADDRESS"\","\"value"\":1000000000,"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\"$encoded_boc"\"}" \
+        -p "{"\"dest"\":"\"$ELECTOR_ADDRESS"\","\"value"\":1000000000,"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\"$encoded_recover-query.boc"\"}" \
         -w -1 \
         --setkey msig.keys.bin
 
