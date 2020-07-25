@@ -5,7 +5,7 @@
     sudo apt install bc -y
     git clone https://github.com/thesongofmoses/node.operator.mainnet.git
     mv node.operator.mainnet node.operator
-    cd node.operator/scripts && . ~/node.operator/configs/env.sh
+    cd node.operator/scripts && . ~/node.operator/configs/env.sh main
     chmod +x -R ${NODE_OPERATOR_SCRIPTS_DIR}
     cd ~/node.operator/configs
     cat bashrc > ~/.bashrc && source ~/.bashrc
