@@ -35,6 +35,25 @@ export SOLIDITY_DIR="${DEV_DIR}/ton-labs-contracts/solidity"
 export SETCODEMULTISIG_DIR="${SOLIDITY_DIR}/setcodemultisig"
 export SAFEMULTISIG_DIR="${SOLIDITY_DIR}/safemultisig"
 
+#VALIDATION GLOBAL PARAMETERS
+##parameters
+P1=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && ./liteClient.sh getconfig 1)
+P15=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && ./liteClient.sh getconfig 15)
+
+##election variables
+CYCLE_DURATION=$(echo $P15 | awk 'FNR == 4 {print $4}' | tr -d 'validators_elected_for:')
+export CYCLE_DURATION
+ELECTION_START_BEFORE=$(echo $P15 | awk 'FNR == 4 {print $5}' | tr -d 'elections_start_before:')
+export ELECTION_START_BEFORE
+ELECTION_END_BEFORE=$(echo $P15 | awk 'FNR == 4 {print $6}' | tr -d 'elections_end_before:')
+export ELECTION_END_BEFORE
+STAKES_HELD_FOR=$(echo $P15 | awk 'FNR == 4 {print $7}' | tr -d 'stakes_held_for:\)')
+export STAKES_HELD_FOR
+
+RAW_ELECTOR_ADDRESS=$(echo $P1 | sed -n 4p | awk '{print $4}' | tr -d 'elector_addr:x\)')
+ELECTOR_ADDRESS=$(printf "-1:%s" RAW_ELECTOR_ADDRESS)
+export ELECTOR_ADDRESS
+
 ##tonos-cli
 export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
 
