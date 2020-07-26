@@ -3,7 +3,7 @@
 . ~/node.operator/configs/env.sh
 
 check_status=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
-./checkAccount.sh ${1} | grep account | awk 'FNR == 3 {print $1}' | perl -ne '/state:\(account_(\S+)/ && print $1')
+./checkAccount.sh ${2} | grep account | awk 'FNR == 3 {print $1}' | perl -ne '/state:\(account_(\S+)/ && print $1')
 
 if [ "$check_status" == 'active' ];
 then
