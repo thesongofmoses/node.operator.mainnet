@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. ~/node.operator/configs/env.sh
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call ${1} \
         submitTransaction "{"\"dest"\":"\"${2}"\","\"value"\":${3},"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
