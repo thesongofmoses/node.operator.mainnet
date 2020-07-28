@@ -9,8 +9,6 @@ NODE_OPERATOR_CONFIGS_DIR='$HOME/node.operator/configs'
 #install dependencies
 sudo apt install bc -y
 cd ${NODE_OPERATOR_SCRIPTS_DIR} && . ${NODE_OPERATOR_CONFIGS_DIR}/env.sh ${1}
-cd ${NODE_OPERATOR_CONFIGS_DIR}
-    cat bashrc.config > $HOME/.bashrc && source $HOME/.bashrc
 
 #install node
 cd && git clone https://github.com/tonlabs/${1}.ton.dev.git
