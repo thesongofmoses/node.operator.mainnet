@@ -15,7 +15,7 @@ These scripts are created to help node operators. All the paths used are the def
 
 Install dependencies and download/setup repo
 	
-	sudo apt update -y && sudo apt upgrade -y && sudo apt install -y git && sudo apt install bc && cd && rm -rf ~/node.operator && git clone https://github.com/thesongofmoses/node.operator.mainnet.git &&  mv node.operator.mainnet node.operator && cd node.operator/scripts && chmod +x -R ${NODE_OPERATOR_SCRIPTS_DIR} && . ~/node.operator/configs/env.sh main && cat ~/node.operator/configs/bashrc.config > ~/.bashrc && source ~/.bashrc
+	sudo apt install -y git && cd && rm -rf ~/node.operator && git clone https://github.com/thesongofmoses/node.operator.mainnet.git && chmod +x -R ~/node.operator.mainnet/scripts && mv ~/node.operator.mainnet ~/node.operator && cat ~/node.operator/configs/bashrc.config > ~/.bashrc && source ~/.bashrc && sudo apt install bc
 
 Import crontab after completion of sync
 
