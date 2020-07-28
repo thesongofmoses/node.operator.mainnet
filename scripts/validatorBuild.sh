@@ -3,11 +3,10 @@
 sudo apt update -y
 sudo apt upgrade -y
 
-NODE_OPERATOR_SCRIPTS_DIR='$HOME/node.operator/scripts'
-NODE_OPERATOR_CONFIGS_DIR='$HOME/node.operator/configs'
-
 #install dependencies
 sudo apt install bc -y
+
+#set env
 cd ${NODE_OPERATOR_SCRIPTS_DIR} && . ${NODE_OPERATOR_CONFIGS_DIR}/env.sh ${1}
 
 #install node
@@ -18,6 +17,7 @@ cd ${SCRIPTS_DIR}
 ./setup.sh
 ./run.sh
 
+#install TVM
 cd && git clone https://github.com/tonlabs/TVM-linker.git
 cd TVM-linker/tvm_linker
 cargo build --release
