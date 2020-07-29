@@ -2,7 +2,7 @@
 
 if [ ${1} == "-h" ] || [ ${1} == '--help' ] && [ $# == 1 ];
 then
-  echo "Usage: sendTokens.sh <sending addr:-my_raw_addr> <dest_addr> <value in ng> <sign:-msig.keys.json>"
+  echo "Usage: sendTokens.sh <sending addr:-my_raw_addr> <dest_addr> <value in ng> <path to keys in keys_dir:-msig.keys.json>"
   exit 0
 fi
 
