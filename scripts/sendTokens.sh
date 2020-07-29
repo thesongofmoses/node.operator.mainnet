@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ${1} == "-h" ] || [ ${1} == '--help' ] && [ $# == 1 ];
+then
+  echo "Usage: sendTokens.sh <sending addr:-my_raw_addr> <dest_addr> <value in ng> <sign:-msig.keys.json>"
+  exit 0
+fi
+
 check_status_one=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
 ./liteClient.sh getaccount ${1} | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//')
 
