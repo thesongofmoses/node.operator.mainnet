@@ -14,7 +14,7 @@ cd ${TONOS_CLI_DIR} && \
 else
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call $MY_RAW_ADDRESS \
-        submitTransaction "{"\"dest"\":"\"${1}"\","\"value"\":${2},"\"bounce"\":true,"\"allBalance"\":true,"\"payload"\":"\""\"}" \
+        submitTransaction "{"\"dest"\":"\"${1}"\","\"value"\":${2},"\"bounce"\":false,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign ${KEYS_DIR}/msig.keys.json
 fi
