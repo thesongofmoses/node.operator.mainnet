@@ -45,8 +45,6 @@ export TONOS_CLI_DIR="${DEV_DIR}/tonos-cli/target/release"
 
 ##ton-work
 export TON_WORK_DIR="/var/ton-work"
-export TON_WORK_DB_DIR="${TON_WORK_DIR}/db"
-export TON_WORK_DB_KEYRING_DIR="${TON_WORK_DB_DIR}/keyring"
 
 ##tvm
 export TVM_DIR="$HOME/TVM-linker/tvm_linker/target/release"
