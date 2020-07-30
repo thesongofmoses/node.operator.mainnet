@@ -11,6 +11,11 @@ export HOSTNAME
 USERNAME=$(whoami)
 export USERNAME
 
+#IP and ports
+MY_PUBLIC_IP=$(curl -sS ipv4bot.whas.comipaddress)
+export MY_PUBLIC_IP
+export LITESERVER_IP="127.0.0.1"
+export LITESERVER_PORT="3031"
 
 #MY ACCOUNT
 export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
