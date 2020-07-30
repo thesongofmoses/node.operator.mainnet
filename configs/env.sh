@@ -51,10 +51,6 @@ export TVM_DIR="$HOME/TVM-linker/tvm_linker/target/release"
 
 ##node.operator
 export NODE_OPERATOR_DIR="$HOME/node.operator"
-export NODE_OPERATOR_SCRIPTS_DIR="${NODE_OPERATOR_DIR}/scripts"
-export NODE_OPERATOR_CONFIGS_DIR="${NODE_OPERATOR_DIR}/configs"
-export NODE_OPERATOR_LOGS_DIR="${NODE_OPERATOR_DIR}/logs"
-export NODE_OPERATOR_MONITOR_DIR="${NODE_OPERATOR_DIR}/monitor"
 
 #GLOBAL PARAMETERS
 export ELECTOR_ADDRESS=$(cat ${ELECTIONS_DIR}/elector-addr-base64)
