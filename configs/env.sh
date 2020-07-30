@@ -5,7 +5,7 @@ then
     set -x
 fi
 
-export NETWORK=${1}
+export NETWORK=main
 HOSTNAME=$(hostname -s)
 export HOSTNAME
 USERNAME=$(whoami)
