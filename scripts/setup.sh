@@ -19,5 +19,8 @@ validator-engine/validator-engine \
   --db "${TON_WORK_DIR}/db"
   --ip "${LITESERVER_IP}":"${LITESERVER_PORT}"
 
-
- 
+sudo mkdir -p "${KEYS_DIR}"
+chmod 700 "${KEYS_DIR}"
+"${UTILS_DIR}/generate-random-id" -m keys -n server > "${KEYS_DIR}/keys_server"
+"${UTILS_DIR}/generate-random-id" -m keys -n liteserver > "${KEYS_DIR}/keys_liteserver"
+"${UTILS_DIR}/generate-random-id" -m keys -n client > "${KEYS_DIR}/keys_client"
