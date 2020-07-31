@@ -11,12 +11,6 @@ export HOSTNAME
 USERNAME=$(whoami)
 export USERNAME
 
-
-#MY ACCOUNT
-export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
-export SAFEMULTISIGWALLET_ABI_JSON="${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json"
-export SAFEMULTISIGWALLET_TVC="${SAFEMULTISIG_DIR}/SafeMultisigWallet.tvc"
-
 #DIRs
 ##x.ton.dev
 export DEV_DIR="$HOME/${NETWORK}.ton.dev"
@@ -25,6 +19,11 @@ export BUILD_DIR="${TON_DIR}/build"
 export SCRIPTS_DIR="${DEV_DIR}/scripts"
 export UTILS_DIR="${TON_BUILD_DIR}/utils"
 export CONFIGS_DIR="${DEV_DIR}/configs"
+
+#MY ACCOUNT
+export MY_RAW_ADDRESS="$(cat ${KEYS_DIR}/$HOSTNAME.addr)"
+export SAFEMULTISIGWALLET_ABI_JSON="${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json"
+export SAFEMULTISIGWALLET_TVC="${SAFEMULTISIG_DIR}/SafeMultisigWallet.tvc"
 
 ##ton-keys
 export KEYS_DIR="$HOME/ton-keys"
