@@ -12,8 +12,9 @@ USERNAME=$(whoami)
 export USERNAME
 
 #IP and ports
-MY_PUBLIC_IP=$(curl -sS ipv4bot.whas.comipaddress)
+MY_PUBLIC_IP=$(curl -sS ipv4bot.whatismyipaddress.com)
 export MY_PUBLIC_IP
+export ADNL_PORT="30310"
 export LITESERVER_IP="127.0.0.1"
 export LITESERVER_PORT="3031"
 
