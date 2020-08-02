@@ -25,7 +25,7 @@ export SAFEMULTISIGWALLET_TVC="${SAFEMULTISIG_DIR}/SafeMultisigWallet.tvc"
 
 #DIRs
 ##x.ton.dev
-export SRC_DIR="$HOME/main.ton.dev"
+export SRC_DIR="$HOME/${NETWORK}.ton.dev"
 export TON_DIR="${SRC_DIR}/ton"
 export BUILD_DIR="${TON_DIR}/build"
 export SCRIPTS_DIR="${DEV_DIR}/scripts"
