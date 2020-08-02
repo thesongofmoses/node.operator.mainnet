@@ -7,6 +7,7 @@ sudo mkdir -p "${TON_WORK_DIR}"
 sudo chown $USERNAME "${TON_WORK_DIR}"
 mkdir -p "${TON_WORK_DIR}/etc"
 mkdir -p "${TON_WORK_DIR}/db"
+mkdir -p "${TON_WORK_DIR}/db/keyring"
 
 sudo cp "${CONFIGS_DIR}/ton-global.config.json" "${TON_WORK_DIR}/etc/ton-global.config.json"
 
@@ -25,4 +26,5 @@ cd "${KEYS_DIR}"
 "${UTILS_DIR}/generate-random-id" -m keys -n client > "${KEYS_DIR}/keys_client"
 chmod 600 "${KEYS_DIR}"/*
 
-mv 
+mv "${KEYS_DIR}/server" "${TON_WORK_DIR}/db/keyring/$(awk '{print $1}' "${KEYS_DIR}/keys_server")"
+mv "${KEYS_DIR}/liteserver" "${TON_WORK_DIR}/db/keyring/$(awk '{print $1}' "${KEYS_DIR}/keys_liteserver")"
