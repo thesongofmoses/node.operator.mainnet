@@ -11,16 +11,16 @@ done < "$input"
 
 
 rm "${1}_status.txt"
-for i in {1..5}
+for i in {1..24}
 do
         cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
-        ./liteClient.sh getaccount $(cat "${NODE_OPERATOR_SCRIPTS_DIR}/${1}.txt" | awk "FNR == ${i}" | awk '{print $1}') | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//' | awk '{print} END {if (!NR) print "empty"}' >> "${1}_status.txt"
+        ./liteClient.sh getaccount $(sed -n ${i}p "${NODE_OPERATOR_SCRIPTS_DIR}/${1}.txt" | awk '{print $1}') | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//' | awk '{print} END {if (!NR) print "empty"}' >> "${1}_status.txt"
 done
 
-for i in {1..5}
+for i in {1..3}
 do
 
-if [ "$(cat ${NODE_OPERATOR_SCRIPTS_DIR}/${1}_status.txt | awk "\"FNR == ${i}"\")" == 'active' ];
+if [ "$(sed -n ${i}p ${NODE_OPERATOR_SCRIPTS_DIR}/${1}_status.txt)" == 'active' ];
 then
 
 cd ${TONOS_CLI_DIR} && \
@@ -29,7 +29,7 @@ cd ${TONOS_CLI_DIR} && \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign ${KEYS_DIR}/"${2}.keys.json"
 
-elif [ "$(cat ${NODE_OPERATOR_SCRIPTS_DIR}/${1}_status.txt | awk "\"FNR == ${i}"\")" != 'active' ];
+elif [ "$(sed -n ${i}p ${NODE_OPERATOR_SCRIPTS_DIR}/${1}_status.txt)" != 'active' ];
 then
 
 cd ${TONOS_CLI_DIR} && \
