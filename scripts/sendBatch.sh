@@ -9,15 +9,14 @@ do
         echo "$address $tokens" >> "${1}.txt"
 done < "$input"
 
-
 rm "${1}_status.txt"
-for i in {1..24}
+for i in {1..44}
 do
         cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
         ./liteClient.sh getaccount $(sed -n ${i}p "${NODE_OPERATOR_SCRIPTS_DIR}/${1}.txt" | awk '{print $1}') | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//' | awk '{print} END {if (!NR) print "empty"}' >> "${1}_status.txt"
 done
 
-for i in {1..3}
+for i in {1..44}
 do
 
 if [ "$(sed -n ${i}p ${NODE_OPERATOR_SCRIPTS_DIR}/${1}_status.txt)" == 'active' ];
@@ -37,6 +36,5 @@ cd ${TONOS_CLI_DIR} && \
         submitTransaction "{"\"dest"\":"\"$(cat "${NODE_OPERATOR_SCRIPTS_DIR}/${1}.txt" | awk "FNR == ${i}" | awk '{print $1}')"\","\"value"\":$(cat "${NODE_OPERATOR_SCRIPTS_DIR}/${1}.txt" | awk "FNR == ${i}" | awk '{print $2}'),"\"bounce"\":false,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign ${KEYS_DIR}/"${2}.keys.json"
-
 fi
 done
