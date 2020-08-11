@@ -2,6 +2,12 @@
 
 . ~/node.operator/configs/env.sh
 
+if [ "${1}" == '--help' ];
+then 
+        echo 'Usage: ./sendBatch.sh <file_name without extension in node_scripts_dir> <filename_keys without .keys.json in keys_dir>'
+        exit 0
+fi
+
 rm "${1}.txt"
 input="${1}.csv"
 while IFS=',' read -r address tokens
