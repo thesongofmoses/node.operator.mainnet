@@ -4,7 +4,7 @@
 
 nano_balance=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
         ./liteClient.sh "getaccount ${MY_RAW_ADDRESS}" | tail -n 1 | tr -d '=''ng' | awk '{print $4}')
-fees_reserve='2000000000'
+fees_reserve='1000000000'
 stake=$(echo $((($nano_balance-$fees_reserve)/1000000000)))
 
 
