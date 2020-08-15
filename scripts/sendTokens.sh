@@ -9,13 +9,10 @@ fi
 id_raw_addr="$(cat ${KEYS_DIR}/${3}.addr)"
 id_keys_json="${KEYS_DIR}/${3}.keys.json"
 
-check_status_one=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
+check_status=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
 ./liteClient.sh getaccount ${1} | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//')
 
-check_status_two=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
-./liteClient.sh getaccount ${id_raw_addr} | awk 'FNR == 19 {print $1}' | sed 's/^.\{15\}//')
-
-if [ "$check_status_one" == 'active' ] && [ $# == 2 ];
+if [ "$check_status" == 'active' ] && [ $# == 2 ];
 then
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call $MY_RAW_ADDRESS \
@@ -23,14 +20,14 @@ cd ${TONOS_CLI_DIR} && \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign ${KEYS_DIR}/msig.keys.json
 
-elif [ "$check_status_two" == 'active' ] && [ $# == 3 ];
+elif [ "$check_status" == 'active' ] && [ $# == 3 ];
 then
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call "${id_raw_addr}" \
         submitTransaction "{"\"dest"\":"\"${1}"\","\"value"\":${2},"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign "${id_keys_json}"
-elif [ "$check_status_one" != 'active' ] && [ $# == 2 ];
+elif [ "$check_status" != 'active' ] && [ $# == 2 ];
 then
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call $MY_RAW_ADDRESS \
@@ -38,7 +35,7 @@ cd ${TONOS_CLI_DIR} && \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign ${KEYS_DIR}/msig.keys.json
 
-elif [ "$check_status_two" != 'active' ] && [ $# == 3 ];
+elif [ "$check_status" != 'active' ] && [ $# == 3 ];
 then
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call "${id_raw_addr}" \
