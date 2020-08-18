@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. ~/node.operator/configs/env.sh
+
 if [ ${1} == "-h" ] || [ ${1} == '--help' ] && [ $# == 1 ];
 then
   echo "Usage: sendTokens.sh <dest_addr> <value in ng> <id:-msig.keys.json>"
