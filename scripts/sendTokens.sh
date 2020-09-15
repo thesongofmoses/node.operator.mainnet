@@ -26,7 +26,7 @@ elif [ "$check_status" == 'active' ] && [ $# == 3 ];
 then
 cd ${TONOS_CLI_DIR} && \
 ./tonos-cli call "${id_raw_addr}" \
-        submitTransaction "{"\"dest"\":"\"${1}"\","\"value"\":${2},"\"bounce"\":true,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
+        submitTransaction "{"\"dest"\":"\"${1}"\","\"value"\":${2},"\"bounce"\":false,"\"allBalance"\":false,"\"payload"\":"\""\"}" \
         --abi "${SAFEMULTISIG_DIR}/SafeMultisigWallet.abi.json" \
         --sign "${id_keys_json}"
 elif [ "$check_status" != 'active' ] && [ $# == 2 ];
@@ -48,3 +48,4 @@ else
 echo "ERROR"
 
 fi
+
