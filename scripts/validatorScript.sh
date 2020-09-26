@@ -7,9 +7,8 @@ nano_balance=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
 fees_reserve='1000000000'
 stake=$(echo $((($nano_balance-$fees_reserve)/1000000000)))
 
-
-sleep_by='600'
-sleep_delay='300'
+sleep_by='360'
+sleep_delay='360'
 sleep="$(($RANDOM% $sleep_by+$sleep_delay))"
 
 check_election_status=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
