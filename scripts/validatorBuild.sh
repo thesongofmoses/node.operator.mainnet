@@ -16,3 +16,6 @@ cd ${SCRIPTS_DIR}
 ./build.sh
 ./setup.sh
 ./run.sh
+rm validator_msig.sh
+wget https://raw.githubusercontent.com/tonlabs/net.ton.dev/master/scripts/validator_msig.sh
+chmod +x validator_msig.sh
