@@ -1,12 +1,3 @@
-# node.operator.mainnet
-
-      mv node.operator.mainnet node.operator
-    cd node.operator/scripts && . ~/node.operator/configs/env.sh main
-    chmod +x -R ${NODE_OPERATOR_SCRIPTS_DIR}
-    cd ~/node.operator/configs
-    cat bashrc > ~/.bashrc && source ~/.bashrc
-    crontab ~/node.operator/configs/crontab
-
 # node.operator
 
 These scripts are created to help node operators. All the paths used are the default locations of https://github.com/tonlabs/main.ton.dev.
