@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ${NODE_OPERATOR_CONFIGS_DIR}/env.sh
+. ~/node.operator/configs/env.sh
 
 nano_balance=$(cd ${NODE_OPERATOR_SCRIPTS_DIR} && \
         ./liteClient.sh "getaccount ${MY_RAW_ADDRESS}" | tail -n 1 | tr -d '=''ng' | awk '{print $4}')
